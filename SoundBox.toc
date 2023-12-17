@@ -1,0 +1,13 @@
+## Interface: 30400
+## Title: SoundBox |cFF0099FF [Core] |c0000FF00 V2.2.0|r
+## SavedVariables: SB__isActivated, SB__soundStats, SB__soundTest
+## Version: v2.2.0
+## Notes: Allow messages and sound to be played among users of the addon
+## Author: Molybdene
+## OptionalDeps: SoundBoxAdmin
+## Dependencies:
+
+DBSounds.lua
+DBCategories.lua
+DBGroups.lua
+SoundBox.lua
