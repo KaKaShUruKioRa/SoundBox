@@ -2,10 +2,11 @@
 local SB__pathToSound = "Interface\\AddOns\\SoundBox\\Sounds\\"
 local SB__listLastPlayedByCat = {}; -- TODO
 local SB__soundPlaying = false
+
 SB__soundEnabled = 1
 SB__longSoundEnabled = 1
 SB__longSoundLimit = 10
-local SB__version = "2.2.0"
+local SB__version = "2.2.1"
 local SB__uiMainFrameDisplayed = 0
 SB__prefix = "SoundBox"
 
@@ -24,7 +25,6 @@ SB__uiHeaderHeight = 30;
 SB__uiFavoritesHeight = 50;
 SB__uiTooltipHeight = 30;
 SB__uiComputedWidth = SB__uiMarginButton + SB__uiNbButtonsPerRow * (SB__uiButtonSoundWidth + SB__uiButtonDetailsWidth + SB__uiMarginButton);
-
 
 local SB__waitTable = {};
 local SB__waitFrame = nil;
@@ -131,6 +131,34 @@ function SB__GetKeysSortedByValue(tbl, sortFunction)
 	return keys
 end
 
+queue = {}
+
+function queue.push(self, item)
+	if ((#self.list) < 5) then
+		table.insert(self.list, item)
+		return true
+	end
+	return false
+end
+
+function queue.pop(self)
+	return table.remove(self.list, 1)
+end
+
+function queue.is_empty(self)
+	return #self.list == 0
+end
+
+function queue.len(self)
+	return #self.list
+end
+
+function queue.new()
+	return setmetatable({list = {}}, {__index = queue})
+end
+
+local soundQ = queue.new()
+
 -- updates the favorites displayed on the top of the UI
 local function SB__UIFavoriteUpdate(name)
 	
@@ -173,6 +201,10 @@ local SB_updateAntiSpamDisplay
 local function SB_releaseAntiSpam()
 	SB__soundPlaying = false
 	SB_updateAntiSpamDisplay()
+	if (soundQ:len() > 0) then
+		obj = soundQ:pop()
+		obj.func(obj.channel, obj.sender, obj.sound, obj.text, obj.duration, obj.categoryName, obj.isRandom, true)
+	end
 end
 
 
@@ -194,16 +226,24 @@ end
 
 
 -- function that will play the sound if allowed to do so
-local function SB__DoPlaySound(channel, sender, sound, text, duration, categoryName, isRandom)
+local function SB__DoPlaySound(channel, sender, sound, text, duration, categoryName, isRandom, fromQueue)
 	--local newSec = GetTime();
 	local options = nil
 	if isRandom == 1 then
 		options = "R"	
 	end
 	if not SB__isAllowedToPlay(duration, channel) then
-		text = "(M) " .. text
+		if (fromQueue == false and SB__soundPlaying) then
+			res = soundQ:push({channel = channel, sender = sender, sound = sound, text = text, duration = duration, categoryName = categoryName, isRandom = isRandom, func = SB__DoPlaySound})
+			if res == true then
+				text = "Putting in queue " .. text
+			else
+				text = nil
+			end
+		end
 	else
 		if (SB__soundEnabled == 1 and SB__isActivated == 1) then -- mute or activation check
+			text = "Playing " .. text
 			PlaySoundFile(SB__pathToSound .. sound, "Dialog")
 			-- adding the fact that we played this sound for this category
 			--if (channel ~= "WHISPER" and categoryName ~= "") then
@@ -216,10 +256,12 @@ local function SB__DoPlaySound(channel, sender, sound, text, duration, categoryN
 		--SB__timeLastPlayed = newSec
 		--SB__antiSpamLength = duration - SB__antiSpamLengthAllowed
 		SB__soundPlaying = true;
-		SB__wait(duration, SB_releaseAntiSpam);
+		SB__wait(duration + 1.5, SB_releaseAntiSpam);
 		SB_updateAntiSpamDisplay()
 	end
-	SB__WriteText(channel, sender, text, options);
+	if text ~= nil then
+		SB__WriteText(channel, sender, text, options);
+	end
 end
 
 -- called when an admin send the "enable/disable" command. Modifying this function to bypass admin command will only play sound on your part, so don't bother.
@@ -288,7 +330,7 @@ local function SB__DecodeCommand(channel, sender, command)
 		local categoryName = wordsArg[5]
 		local isRandom = tonumber(wordsArg[6])
 		if (soundToPlay ~= nil and textToDisplay ~= nil and soundDuration ~= nil) then
-			SB__DoPlaySound(channel, sender, soundToPlay, textToDisplay, soundDuration, categoryName, isRandom)
+			SB__DoPlaySound(channel, sender, soundToPlay, textToDisplay, soundDuration, categoryName, isRandom, false)
 		end
 	elseif (typeOfCommand == "admin") then
 		local order = wordsArg[2]
