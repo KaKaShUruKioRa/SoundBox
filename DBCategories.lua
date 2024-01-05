@@ -102,6 +102,31 @@ DBCategories["Rez"] = { "sb_angels", "sb_hichealhcare", "sb_healthcare", "sb_the
 	};
 
 --Par Theme--
+DBCategories["Attente"] = {
+	"sb_54321", "sb_bite", "sb_demi", "sb_elevator", "sb_jeopardy", "sb_crickets", "sb_technicalerror",
+	"sb_ronfle", "sb_whatareyouwaitingfor"
+	};
+DBCategories["Degueux"] = { "sb_slurp", "sb_uwu", "sb_whatdoido", "sb_degueulasse" };
+DBCategories["Tristesse"] = {
+	"sb_whenyoutryyourbest", "sb_myself", "sb_sad", "sb_silence", "sb_violon", "sb_sorry",
+	"sb_youarefine", "sb_sadschindler", "sb_naruto", "sb_sadpiano", "sb_chiale", "sb_oublier",
+	};
+DBCategories["Internet"] = {
+	"sb_internet", "sb_discordjoined", "sb_discordleave", "sb_discordnotif", "sb_chiantos", "sb_leviosa", "sb_muller", "sb_coffin",
+	"sb_flute", "sb_codeavecquoi", "sb_hahailmabieneu", "sb_gobwah", "sb_aaaaah", "sb_banned", "sb_directedby", "sb_suspense", 
+	"sb_dramatic", "sb_eddymalou", "sb_viens", "sb_blague",  "sb_suponjubobu", "sb_blaguevalide", "sb_ph", "sb_papaya", "sb_wtfboom",
+	"sb_nogodpleaseno", "sb_viol", "sb_heknew", 
+	};
+DBCategories["Bruitages"] = {
+	"sb_toctoc", "sb_horns", "sb_pingouin", "sb_diablo_legendary_drop", "sb_pifpaf", "sb_squack", "sb_badumkss", "sb_FusRohDah",
+	"sb_Wilhelm", "sb_fatality", "sb_diablo", "sb_gameover", "sb_gameoverVS", "sb_SoldatPopAoM", "sb_ReportAmongUs", "sb_heylisten",
+	"sb_RevealAmongUs", "sb_SummonDarkSouls", "sb_youdied", "sb_SecretTLoZRetro", "sb_SecretTLoZ", "sb_RubisTLoZ", 
+	"sb_ItemGetTLoZ",
+	};
+DBCategories["Jingles"] = {
+	"sb_eric_andre_transition", "sb_jeopardy", "sb_technicalerror", "sb_elevator", "sb_victoire", "sb_yeah", "sb_ohyeah", "sb_jingle", 
+	"sb_criticalmissionfailure", "sb_badumkss", "sb_betonniere", "sb_motus", "sb_fatality", "sb_wow", "sb_gameover", "sb_gameoverVS",
+	};
 DBCategories["Antoine Daniel"] = { "sb_petitebite", "sb_alerte", "sb_AD_salut01", "sb_AD_salut02", "sb_AD_salut03", "sb_AD_salut04", "sb_AD_salut05",
 	"sb_AD_salut07", "sb_AD_salut08", "sb_AD_salut09", "sb_AD_salut10", "sb_AD_salut11", "sb_AD_salut12", "sb_AD_salut13",
 	"sb_AD_salut14", "sb_AD_salut15", "sb_AD_salut16", "sb_AD_salut17", "sb_AD_salut18", "sb_AD_salut19", "sb_AD_salut21",
@@ -112,32 +137,7 @@ DBCategories["Antoine Daniel"] = { "sb_petitebite", "sb_alerte", "sb_AD_salut01"
 	"sb_fairedumal", "sb_baseball", "sb_fairemerde",
 	};
 DBCategories["Joueur du Grenier"] = { "sb_blaguevalide", "sb_muller", "sb_nulachier", "sb_aspirine", "sb_desballes", };
-DBCategories["Attente"] = {
-	"sb_54321", "sb_bite", "sb_demi", "sb_elevator", "sb_jeopardy", "sb_crickets", "sb_technicalerror",
-	"sb_ronfle", "sb_whatareyouwaitingfor"
-	};
-DBCategories["Jingles"] = {
-	"sb_eric_andre_transition", "sb_jeopardy", "sb_technicalerror", "sb_elevator", "sb_victoire", "sb_yeah", "sb_ohyeah", "sb_jingle", 
-	"sb_criticalmissionfailure", "sb_badumkss", "sb_betonniere", "sb_motus", "sb_fatality", "sb_wow", "sb_gameover", "sb_gameoverVS",
-	};
-DBCategories["Tristesse"] = {
-	"sb_whenyoutryyourbest", "sb_myself", "sb_sad", "sb_silence", "sb_violon", "sb_sorry",
-	"sb_youarefine", "sb_sadschindler", "sb_naruto", "sb_sadpiano", "sb_chiale", "sb_oublier",
-	};
-DBCategories["Degueux"] = { "sb_slurp", "sb_uwu", "sb_whatdoido", "sb_degueulasse" };
 DBCategories["Pere Fouras"] = { "sb_enigme", "sb_enigme2" };
-DBCategories["Bruitages"] = {
-	"sb_toctoc", "sb_horns", "sb_pingouin", "sb_diablo_legendary_drop", "sb_pifpaf", "sb_squack", "sb_badumkss", "sb_FusRohDah",
-	"sb_Wilhelm", "sb_fatality", "sb_diablo", "sb_gameover", "sb_gameoverVS", "sb_SoldatPopAoM", "sb_ReportAmongUs", "sb_heylisten",
-	"sb_RevealAmongUs", "sb_SummonDarkSouls", "sb_youdied", "sb_SecretTLoZRetro", "sb_SecretTLoZ", "sb_RubisTLoZ", 
-	"sb_ItemGetTLoZ",
-	};
-DBCategories["Internet"] = {
-	"sb_internet", "sb_discordjoined", "sb_discordleave", "sb_discordnotif", "sb_chiantos", "sb_leviosa", "sb_muller", "sb_coffin",
-	"sb_flute", "sb_codeavecquoi", "sb_hahailmabieneu", "sb_gobwah", "sb_aaaaah", "sb_banned", "sb_directedby", "sb_suspense", 
-	"sb_dramatic", "sb_eddymalou", "sb_viens", "sb_blague",  "sb_suponjubobu", "sb_blaguevalide", "sb_ph", "sb_papaya", "sb_wtfboom",
-	"sb_nogodpleaseno", "sb_viol", "sb_heknew", 
-	};
 
 --Par Langue--
 DBCategories["En Francais"] = {
@@ -283,7 +283,7 @@ DBCategories["World of Warcraft"] = { "sb_leeroy", "sb_murloc", "sb_baston", };
 DBCategories["Ken"] = {"sb_shindeiru"};
 DBCategories["Jojo's"] = { "sb_hinjaku", "sb_muda", };
 
-DBCategories["Kaamelott"] = { 
+DBCategories["Kaamelott"] = {
 	"sb_poulette", "sb_colifichet", "sb_chemise", "sb_considerer", "sb_pigeon", "sb_pasmort", "sb_ilestfort", "sb_galles", "sb_ambiance", "sb_poil", "sb_intro",
 	"sb_connerie","sb_refuse", "sb_raf", "sb_roul", "sb_bite", "sb_fulgurant", "sb_mortel", "sb_connard", "sb_raclette", "sb_vacherie", "sb_capital",  "sb_faux",
 	"sb_demarre", "sb_facile", "sb_ecoute", "sb_riencompris", "sb_roulettes", "sb_merde", "sb_bien", "sb_chier_bout", "sb_fache", "sb_merciderien", "sb_slibard",
@@ -292,8 +292,9 @@ DBCategories["Kaamelott"] = {
 	"sb_raison", "sb_poney", "sb_heure", "sb_foutre", "sb_explique", "sb_debile", "sb_ahcca", "sb_quequette", "sb_galere",
 	};
 DBCategories["Palmashow"] = {"sb_jeanne", }
-DBCategories["Les Kassos"] = { "sb_rage", "sb_porte", "sb_piege", "sb_agrapheuse","sb_enigme", "sb_enigme2", "sb_jetaieu" , "sb_prendsca",
-"sb_hopital", "sb_canard", "sb_marine", "sb_tazer", "sb_zut", "sb_coquille",
+DBCategories["Les Kassos"] = {
+	"sb_rage", "sb_porte", "sb_piege", "sb_agrapheuse","sb_enigme", "sb_enigme2", "sb_jetaieu" , "sb_prendsca",
+	"sb_hopital", "sb_canard", "sb_marine", "sb_tazer", "sb_zut", "sb_coquille",
 };
 
 DBCategories["Dexter"] = {"sb_surprise" };
