@@ -1,4 +1,4 @@
-SB__version_DBSounds                     = "2.2.1"
+SB__version_DBSounds                     = "2.2.2"
 
 DBSounds                                 = {};
 
@@ -231,6 +231,7 @@ DBSounds["sb_fox_bad"]                   = "sound;sb_fox_bad.ogg;20th CeNTuRyFox
 DBSounds["sb_fuckitall"]                 = "sound;sb_fuckitall.ogg;Fuck it aaaaall;14"
 DBSounds["sb_fuckthisshit"]              = "sound;sb_fuckthisshit.ogg;Fuck this shit I'm out;10"
 DBSounds["sb_fulgurant"]                 = "sound;sb_fulgurant.ogg;Ah ouai, j'l'ai fait trop fulgurant là.;2"
+DBSounds["sb_FusRohDah"]                 = "sound;sb_FusRohDah.ogg;Fus Roh Dah !!! EPIC ! .;7"
 DBSounds["sb_futurama"]                  = "sound;sb_futurama.ogg;Futurama;14"
 --G--
 DBSounds["sb_galere"]                    = "sound;sb_galere.ogg;Le prochain qui l'ouvre, je l'envoi aux galères pendant 3 ans.;5"
