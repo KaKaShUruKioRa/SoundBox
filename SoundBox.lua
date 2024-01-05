@@ -6,7 +6,7 @@ local SB__soundPlaying = false
 SB__soundEnabled = 1
 SB__longSoundEnabled = 1
 SB__longSoundLimit = 10
-local SB__version = "2.2.1"
+local SB__version = "2.2.2"
 local SB__uiMainFrameDisplayed = 0
 SB__prefix = "SoundBox"
 
